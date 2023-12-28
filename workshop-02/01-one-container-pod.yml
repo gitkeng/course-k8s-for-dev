@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: one-container-pod
+  namespace: workshop-02
+spec:
+  containers:
+    - name: curl001
+      image: curlimages/curl
+      command: ['sh', '-c', 'while true; do sleep 5; done']

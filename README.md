@@ -26,13 +26,33 @@ Before you start workshop, install the following prerequisites.
 1. [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/)
 2. [Install Homebrew](https://docs.brew.sh/Installation)
 3. Install k3d using command
-    ```bash
+   ```bash
     brew install k3d
    ```
 
+### Workshop Outline
+
+**workshop-01**: Create 4-node K3d cluster
+
+**workshop-02**: Pod and Namespaces
+
+**workshop-03**: kubectl
+
+**workshop-04**: Managing Application Configuration
+
+**workshop-05**: Managing Container Resources
+
+**workshop-06**: Restart Policy
+
+**workshop-07**: Multi-Container and Init Containers
+
+#### Course Material
+
+Appendix 1 - [Presentation](kubernetes.pdf)
+
 ---
 
-by Kongsak Limpitikeat
+By Kongsak Limpitikeat
 
 ก้องศักดิ์ ลิมปิติเกียรติ
 

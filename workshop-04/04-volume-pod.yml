@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-pod
+  namespace: workshop-04
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      command: [ '/bin/sh', '-c', 'while true; do sleep 5; done']
+      volumeMounts:
+        - name: configmap-volume
+          mountPath: /etc/config/configmap
+        - name: secret-volume
+          mountPath: /etc/config/secret
+  volumes:
+    - name: configmap-volume
+      configMap:
+        name: my-configmap
+    - name: secret-volume
+      secret:
+        secretName: my-secret

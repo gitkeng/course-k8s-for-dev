@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: workshop-06
+  name: onfailure-pod-with-err
+spec:
+  restartPolicy: OnFailure
+  containers:
+    - name: busybox
+      image: busybox
+      command: [ 'sh', '-c', 'sleep 10; this is a bad command that will fail']

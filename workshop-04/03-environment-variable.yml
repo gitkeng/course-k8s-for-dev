@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-pod
+  namespace: workshop-04
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      command: [ '/bin/sh', '-c', 'while true; do sleep 5; echo "configmap: $CONFIGMAPVAR secret: $SECRETVAR"; done']
+      env:
+        - name: CONFIGMAPVAR
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap
+              key: key1
+        - name: SECRETVAR
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: secretkey1

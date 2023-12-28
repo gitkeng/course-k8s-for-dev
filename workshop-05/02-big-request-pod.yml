@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: workshop-05
+  name: big-request-pod
+spec:
+  containers:
+    - name: busybox
+      image: busybox
+      command: ['sh','-c','while true; do sleep 5; done']
+      resources:
+        requests:
+          #TODO: wait request cpu and memory
+          cpu: '' #example '10000m'
+          memory: '' #example '1Gi'

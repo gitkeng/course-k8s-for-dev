@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: workshop-06
+  labels:
+    name: workshop-06
+    module: workshop-06

@@ -1,0 +1,1 @@
+docker pull gcr.io/google-containers/echoserver:1.10

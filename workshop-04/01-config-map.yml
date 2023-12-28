@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-configmap
+  namespace: workshop-04
+data:
+  key1: Hello, world!
+  key2: |
+    Test
+    multiple lines
+    more lines
+  key3: >
+    Test
+    multiple lines
+    one lines

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: workshop-02
+  labels:
+    name: workshop-02
+    module: workshop-02
