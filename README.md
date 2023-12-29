@@ -32,19 +32,21 @@ Before you start workshop, install the following prerequisites.
 
 ### Workshop Outline
 
-**workshop-01**: Create 4-node K3d cluster
+**workshop-01**: [Create 4-node K3d cluster](workshop-01%2F)
 
-**workshop-02**: Pod and Namespaces
+**workshop-02**: [Pod and Namespaces](workshop-02%2F)
 
-**workshop-03**: kubectl
+**workshop-03**: [kubectl](workshop-03%2F)
 
-**workshop-04**: Managing Application Configuration
+**workshop-04**: [Managing Application Configuration](workshop-04%2F)
 
-**workshop-05**: Managing Container Resources
+**workshop-05**: [Managing Container Resources](workshop-05%2F)
 
-**workshop-06**: Restart Policy
+**workshop-06**: [Restart Policy](workshop-06%2F)
 
-**workshop-07**: Multi-Container and Init Containers
+**workshop-07**: [Multi-Container and Init Containers](workshop-07%2F)
+
+**workshop-08**: [Scheduling and DaemonSets](workshop-08%2F)
 
 #### Course Material
 

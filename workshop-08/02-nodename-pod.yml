@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: workshop-08
+  name: nodename-pod
+spec:
+  nodeName: k3d-mycluster-agent-0
+  containers:
+    - name: nginx
+      image: nginx:latest

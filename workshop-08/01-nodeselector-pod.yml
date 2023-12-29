@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: workshop-08
+  name: frontend-pod
+spec:
+  nodeSelector:
+    worker-type: frontend
+  containers:
+    - name: nginx
+      image: nginx:latest
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: workshop-08
+  name: service-pod
+spec:
+  nodeSelector:
+    worker-type: service
+  containers:
+    - name: echo
+      image: ealen/echo-server:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: workshop-08
+  name: database-pod
+spec:
+  nodeSelector:
+    worker-type: database
+  containers:
+    - name: redis
+      image: redis:latest
