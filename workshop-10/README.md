@@ -82,7 +82,9 @@
    ```bash
    kubectl describe ingress/my-ingress -n workshop-10
    ```
+
    Goto browser and access http://localhost:8080
+
    ![my-ingress.png](my-ingress.png)
 
 4. Remove all
