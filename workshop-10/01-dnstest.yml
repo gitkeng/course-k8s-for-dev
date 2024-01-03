@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: workshop-10
+  name: netshoot
+spec:
+  containers:
+    - name: netshoot
+      image: nicolaka/netshoot
+      command: ['sh', '-c', 'while true; do sleep 5; done']
+      securityContext:
+        privileged: true
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: workshop-10
+  name: nginx-dnstest
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80

@@ -4,15 +4,18 @@
 
     #### MacOS
     ```bash
-    k3d cluster create mycluster \
-    --servers 1 \
-    --agents 3 \
-    --image rancher/k3s:latest
+   k3d cluster create mycluster \
+   --api-port 6443 \
+   --port 8443:443@loadbalancer  \
+   --port 8080:80@loadbalancer \
+   --volume $(pwd)/k3dvol:/tmp/k3dvol \
+   --image rancher/k3s:latest \
+   --servers 1 --agents 3
     ```
 
     #### Windows
     ```cmd
-    k3d cluster create mycluster --servers 1 --agents 3 --image rancher/k3s:latest
+    k3d cluster create mycluster --api-port 6443 --port 8443:443@loadbalancer --port 8080:80@loadbalancer --volume %cd%\k3dvol:/tmp/k3dvol --image rancher/k3s:latest --servers 1 --agents 3
     ```
    
    Tip: You can break up long lines in windows with the caret `^` as long as you remember that the caret and the newline following it are completely removed

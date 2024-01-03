@@ -48,6 +48,10 @@ Before you start workshop, install the following prerequisites.
 
 **workshop-08**: [Scheduling and DaemonSets](workshop-08%2F)
 
+**workshop-09**: [Deployments](workshop-09%2F)
+
+**workshop-10**: [Service and Ingress](workshop-10%2F)
+
 #### Course Material
 
 Appendix 1 - [Presentation](kubernetes.pdf)
