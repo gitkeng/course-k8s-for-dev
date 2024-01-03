@@ -45,7 +45,7 @@
    kubectl get endpoints -n workshop-10
    ```
    ```bash
-    kubectl exec netshoot -n workshop-10 -- curl svc-clusterip
+   kubectl exec netshoot -n workshop-10 -- curl svc-clusterip
    ```
    ```bash
    kubectl apply -f 04-svc-nodeport.yml

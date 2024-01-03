@@ -52,6 +52,9 @@ Before you start workshop, install the following prerequisites.
 
 **workshop-10**: [Service and Ingress](workshop-10%2F)
 
+**workshop-11**: [K8s Storage](workshop-11%2F)
+
+
 #### Course Material
 
 Appendix 1 - [Presentation](kubernetes.pdf)

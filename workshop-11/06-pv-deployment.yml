@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: workshop-11
+  name: pv-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: pv-deployment
+  template:
+    metadata:
+      labels:
+        app: pv-deployment
+    spec:
+      containers:
+        - name: netshoot
+          image: nicolaka/netshoot
+          command: ['sh','-c',"while true; do now=$(date); ip_addr=$(getent hosts `hostname` | awk '{print $1}'); echo [$ip_addr][$now]: process success! >> /output/pv-deploy.log;sleep 5; done"]
+          volumeMounts:
+            - name: pv-storage
+              mountPath: /output
+      volumes:
+        - name: pv-storage
+          persistentVolumeClaim:
+            claimName: host-pvc

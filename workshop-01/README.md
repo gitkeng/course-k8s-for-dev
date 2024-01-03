@@ -9,6 +9,10 @@
    --port 8443:443@loadbalancer  \
    --port 8080:80@loadbalancer \
    --volume $(pwd)/k3dvol:/tmp/k3dvol \
+   --volume $(pwd)/server0:/var/data@server:0 \
+   --volume $(pwd)/agent0:/var/data@agent:0 \
+   --volume $(pwd)/agent1:/var/data@agent:1 \
+   --volume $(pwd)/agent2:/var/data@agent:2 \
    --image rancher/k3s:latest \
    --servers 1 --agents 3
     ```

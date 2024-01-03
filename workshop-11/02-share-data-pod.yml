@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: workshop-11
+  name: shared-data-pod
+spec:
+  containers:
+    - name: busybox1
+      image: busybox
+      command: ['sh', '-c', 'while true; do now=$(date); echo "[$now]: process success!" >> /output/output.log;sleep 2; done']
+      volumeMounts:
+        - name: shared-vol
+          mountPath: /output
+    - name: busybox2
+      image: busybox
+      command: ['sh', '-c', 'while true; do clear;cat /input/output.log; sleep 10; done']
+      volumeMounts:
+        - name: shared-vol
+          mountPath: /input
+  volumes:
+    - name: shared-vol
+      emptyDir: {}

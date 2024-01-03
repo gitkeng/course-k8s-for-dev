@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: workshop-11
+  name: volume-pod
+spec:
+  restartPolicy: Never
+  containers:
+    - name: busybox
+      image: busybox
+      command: ['sh', '-c', 'while true; do now=$(date); echo "[$now]: process success!" >> /output/volume-pod.log;sleep 5; done']
+      volumeMounts:
+        - name: my-volume
+          mountPath: /output
+  volumes:
+    - name: my-volume
+      hostPath:
+        path: /var/data
