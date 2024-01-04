@@ -4,7 +4,7 @@ metadata:
   namespace: workshop-09
   name: my-deployment
 spec:
-  replicas: 6
+  replicas: 2
   selector:
     matchLabels:
       app: my-deployment

@@ -1,14 +1,21 @@
 ## Example deployment of Wordpress
 
-1. create folder and change owner and permission for store mysql ***unix based system
-    
+1. create "mysql-data" folder under "k3dvol" and change owner and permission for store mysql
+
+    for unix based system
     ```bash
-    mkdir -p ./k3dvol/mysql-data
-    sudo chown -R 1000:1000 ./k3dvol/mysql-data
-    sudo chmod -R 777 ./k3dvol/mysql-data
+    cd k3dvol
+    mkdir mysql-data
+    sudo chown -R 1000:1000 mysql-data
+    sudo chmod -R 777 .mysql-data
+    ```
+    for windows
+    ```bash
+    cd k3dvol
+    mkdir mysql-data
     ```
 
-2. deploy all yaml files in bonus-02-wordpress folder
+2. deploy all yaml files in "bonus-02-wordpress" folder
 
     ```bash
     kubectl apply -f .

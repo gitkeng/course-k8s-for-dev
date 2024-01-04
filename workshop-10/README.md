@@ -63,7 +63,7 @@
    kubectl get no -o wide
    ``` 
    ```bash
-   docker run --rm --network=<k3d network ex. k3d-mycluster> -it nicolaka/netshoot curl <node IP>:<nodeport>
+   docker run --rm --network=<k3d network ex. k3d-mycluster> -it nicolaka/netshoot curl <node IP>:30080
    ```
    ```bash
    kubectl apply -f 05-svc-external.yml
