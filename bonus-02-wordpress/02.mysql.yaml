@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: wordpress-ns
+  name: mysql-pass
+type: Opaque
+data:
+  #echo -n UEBzc3cwcmQ= | base64 -d
+  #echo -n P@ssw0rd | base64
+  password: 'UEBzc3cwcmQ=' #P@ssw0rd
+---  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: wordpress-ns
+  name: wordpress-mysql
+  labels:
+    app: wordpress
+    tier: storage
+spec:
+  selector:
+    matchLabels:
+      app: wordpress
+      tier: storage
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        tier: storage
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      containers:
+      - image: mysql:8.2
+        name: mysql
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password
+        - name: MYSQL_DATABASE
+          value: wordpressdb
+        - name: MYSQL_USER
+          value: wpadmin
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password       
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: wordpress-ns
+  name: wordpress-mysql
+  labels:
+    app: wordpress
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: wordpress
+    tier: storage
+  clusterIP: None

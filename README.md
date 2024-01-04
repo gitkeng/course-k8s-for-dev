@@ -54,10 +54,18 @@ Before you start workshop, install the following prerequisites.
 
 **workshop-11**: [K8s Storage](workshop-11%2F)
 
+---
+## Appendix
 
-#### Course Material
+### Course Material
 
-Appendix 1 - [Presentation](kubernetes.pdf)
+[Course Presentation](kubernetes.pdf)
+
+### Bonus Workshop
+
+**Bonus-01**: [Deploy K8s Dashboard](bonus-01-deploy_k8s_dashboard%2F)
+
+**Bonus-02**: [Example deployment of Wordpress](bonus-02-wordpress%2F)
 
 ---
 
