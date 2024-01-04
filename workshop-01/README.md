@@ -19,7 +19,7 @@
 
     #### Windows
     ```cmd
-    k3d cluster create mycluster --api-port 6443 --port 8443:443@loadbalancer --port 8080:80@loadbalancer --volume %cd%\k3dvol:/tmp/k3dvol --image rancher/k3s:latest --servers 1 --agents 3
+    k3d cluster create mycluster --api-port 6443 --port 8443:443@loadbalancer --port 8080:80@loadbalancer --volume %cd%\k3dvol:/tmp/k3dvol --volume %cd%\server0:/var/data@server:0 --volume %cd%\agent0:/var/data@agent:0 --volume %cd%\agent1:/var/data@agent:1 --volume  %cd%\agent2:/var/data@agent:2 --image rancher/k3s:latest --servers 1 --agents 3
     ```
    
    Tip: You can break up long lines in windows with the caret `^` as long as you remember that the caret and the newline following it are completely removed
