@@ -30,9 +30,6 @@
     kubectl describe po/echo-pod -n workshop-03
     ```
     ```bash
-    kubectl describe po/echo-pod -n workshop-03
-    ``` 
-    ```bash
     kubectl get po -A -o wide --sort-by .spec.nodeName
     ```   
     ```bash
@@ -45,7 +42,7 @@
 4. Execute command in pod
 
    ```bash
-   kubectl exec -it po/echo-pod -n workshop-03 -c netshoot -- curl localhost
+   kubectl exec -it po/echo-pod -n workshop-03 -c netshoot -- curl "localhost?query=helloWorld!"
    ```
    ```bash
    kubectl exec -it po/echo-pod -n workshop-03 -c netshoot -- bash
